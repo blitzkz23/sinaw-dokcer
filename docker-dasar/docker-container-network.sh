@@ -13,3 +13,6 @@ docker container start mongodbnet mongodbexpress
 
 # hapus container dari network
 docker network disconnect mongonetwork mongodbnet
+
+# menambahkan container ke network
+docker network connect mongonetwork mongodbnet
