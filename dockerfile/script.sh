@@ -14,3 +14,7 @@ docker image inspect mznopal/command # untuk lihat bash command yang dijalankan
 docker container create --name command mznopal/command
 docker container start command
 docker container logs command
+
+# LABEL Instruction
+docker build -t mznopal/label label
+docker image inspect mznopal/label # untuk lihat label yang ada pada log image
