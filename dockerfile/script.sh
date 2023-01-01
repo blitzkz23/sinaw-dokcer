@@ -36,3 +36,11 @@ docker build -t mznopal/ignore ignore
 docker container create --name ignore mznopal/ignore
 docker container start ignore
 docker container logs ignore
+
+# EXPOSE Instruction
+docker build -t mznopal/expose expose
+docker image inspect mznopal/expose # untuk lihat port yang di expose
+docker container create --name expose -p 8080:8080 mznopal/expose 
+docker container start expose
+docker container logs expose
+## Buka di browser http://localhost:8080 atau curl http://localhost:8080
