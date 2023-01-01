@@ -106,3 +106,15 @@ docker build -t mznopal/entrypoint entrypoint
 docker container create --name entrypoint -p 8080:8080 mznopal/entrypoint
 docker container start entrypoint
 docker image inspect mznopal/entrypoint # untuk lihat entrypoint yang ada
+
+
+# Multi Stage Build
+docker image ls | grep mznopal # untuk lihat komparasi ukuran image
+docker build -t mznopal/multi multi
+docker container create --name multi -p 8080:8080 mznopal/multi
+docker container start multi
+docker container ls
+
+# DockerHub
+docker login -u mznopal
+docker push mznopal/multi # untuk push image ke dockerhub
