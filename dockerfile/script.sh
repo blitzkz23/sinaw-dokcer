@@ -94,3 +94,9 @@ docker container logs arg # akan ada error karena argumen hanya bisa diakses wak
 docker container exec -it arg /bin/sh # untuk masuk ke bash container
 ls -l # untuk lihat file yang ada
 
+# HEALTHCHECK Instruction
+docker build -t mznopal/healthcheck healthcheck
+docker container create --name healthcheck -p 8080:8080 mznopal/healthcheck
+docker container start healthcheck
+docker container ls
+docker container inspect healthcheck # untuk lihat healthcheck yang ada
