@@ -44,3 +44,16 @@ docker container create --name expose -p 8080:8080 mznopal/expose
 docker container start expose
 docker container logs expose
 ## Buka di browser http://localhost:8080 atau curl http://localhost:8080
+
+
+# ENV Instruction
+docker build -t mznopal/env env
+docker image inspect mznopal/env # untuk lihat environment yang di set
+docker container create --name env -p 8080:8080 mznopal/env
+
+## Misal mau merubah environment variable yang ada pada image
+docker container create --name env --env APP_PORT=8081 -p 8081:8081 mznopal/env
+
+docker container start env
+docker container logs env
+## Buka di browser http://localhost:8080 atau curl http://localhost:8080
