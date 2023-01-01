@@ -27,4 +27,12 @@ docker container logs add
 
 # COPY Instruction
 docker build -t mznopal/copy copy
+docker container create --name copy mznopal/copy
+docker container start copy
+docker container logs copy
 
+# .dockerignore Sample
+docker build -t mznopal/ignore ignore
+docker container create --name ignore mznopal/ignore
+docker container start ignore
+docker container logs ignore
