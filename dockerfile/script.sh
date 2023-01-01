@@ -77,7 +77,7 @@ docker container create --name workdir -p 8080:8080 mznopal/workdir
 docker container start workdir
 docker container exec -it workdir /bin/sh # untuk masuk ke bash container
 pwd # untuk lihat lokasi kerja
-ls # untuk lihat file yang ada
+ls -l # untuk lihat file yang ada
 
 # USER Instruction
 docker build -t mznopal/user user
@@ -85,3 +85,12 @@ docker container create --name user -p 8080:8080 mznopal/user
 docker container start user
 docker container exec -it user /bin/sh # untuk masuk ke bash container
 whoami # untuk lihat user yang sedang aktif
+
+# ARG Instruction
+docker build -t mznopal/arg arg --build-arg appname=pzn
+docker container create --name arg -p 8080:8080 mznopal/arg
+docker container start arg
+docker container logs arg # akan ada error karena argumen hanya bisa diakses waktu build, sedangkan kita menggunaka argumen di cmd
+docker container exec -it arg /bin/sh # untuk masuk ke bash container
+ls -l # untuk lihat file yang ada
+
