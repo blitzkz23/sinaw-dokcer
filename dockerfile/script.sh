@@ -25,3 +25,6 @@ docker container create --name add mznopal/add
 docker container start add
 docker container logs add
 
+# COPY Instruction
+docker build -t mznopal/copy copy
+
