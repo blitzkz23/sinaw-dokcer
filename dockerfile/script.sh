@@ -1,3 +1,5 @@
+# Dockerfile Module Instruction
+
 # FROM Instruction (docker image build -tag namadockerhub/namaimage:tag lokasifolder)
 docker build -t mznopal/from from
 docker image ls
@@ -68,3 +70,11 @@ docker container logs volume
 ## Tulis url baru, misal localhost:8080/apa, data akan tersimpan di volume
 docker container inspect volume # untuk lihat lokasi volume pada bagian Mounts
 docker volume ls
+
+# WORKDIR Instruction
+docker build -t mznopal/workdir workdir
+docker container create --name workdir -p 8080:8080 mznopal/workdir
+docker container start workdir
+docker container exec -it workdir /bin/sh # untuk masuk ke bash container
+pwd # untuk lihat lokasi kerja
+ls # untuk lihat file yang ada
