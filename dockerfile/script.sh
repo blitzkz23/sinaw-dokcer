@@ -18,3 +18,10 @@ docker container logs command
 # LABEL Instruction
 docker build -t mznopal/label label
 docker image inspect mznopal/label # untuk lihat label yang ada pada log image
+
+# ADD Instruction
+docker build -t mznopal/add add
+docker container create --name add mznopal/add
+docker container start add
+docker container logs add
+
