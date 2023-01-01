@@ -39,7 +39,7 @@ docker container logs ignore
 
 # EXPOSE Instruction
 docker build -t mznopal/expose expose
-docker image inspect mznopal/expose # untuk lihat port yang di expose
+docker image inspect mznopal/expose # untuk lihat port yang diexpose
 docker container create --name expose -p 8080:8080 mznopal/expose 
 docker container start expose
 docker container logs expose
@@ -48,7 +48,7 @@ docker container logs expose
 
 # ENV Instruction
 docker build -t mznopal/env env
-docker image inspect mznopal/env # untuk lihat environment yang di set
+docker image inspect mznopal/env # untuk lihat environment yang diset
 docker container create --name env -p 8080:8080 mznopal/env
 
 ## Misal mau merubah environment variable yang ada pada image
@@ -57,3 +57,14 @@ docker container create --name env --env APP_PORT=8081 -p 8081:8081 mznopal/env
 docker container start env
 docker container logs env
 ## Buka di browser http://localhost:8080 atau curl http://localhost:8080
+
+# VOLUME Instruction
+docker build -t mznopal/volume volume
+docker image inspect mznopal/volume # untuk lihat volume yang diset
+docker container create --name volume -p 8080:8080 mznopal/volume
+docker container start volume
+docker container logs volume
+## Buka di browser http://localhost:8080 atau curl http://localhost:8080
+## Tulis url baru, misal localhost:8080/apa, data akan tersimpan di volume
+docker container inspect volume # untuk lihat lokasi volume pada bagian Mounts
+docker volume ls
