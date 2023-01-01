@@ -78,3 +78,10 @@ docker container start workdir
 docker container exec -it workdir /bin/sh # untuk masuk ke bash container
 pwd # untuk lihat lokasi kerja
 ls # untuk lihat file yang ada
+
+# USER Instruction
+docker build -t mznopal/user user
+docker container create --name user -p 8080:8080 mznopal/user
+docker container start user
+docker container exec -it user /bin/sh # untuk masuk ke bash container
+whoami # untuk lihat user yang sedang aktif
