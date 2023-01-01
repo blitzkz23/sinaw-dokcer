@@ -100,3 +100,9 @@ docker container create --name healthcheck -p 8080:8080 mznopal/healthcheck
 docker container start healthcheck
 docker container ls
 docker container inspect healthcheck # untuk lihat healthcheck yang ada
+
+# ENTRYPOINT Instruction
+docker build -t mznopal/entrypoint entrypoint
+docker container create --name entrypoint -p 8080:8080 mznopal/entrypoint
+docker container start entrypoint
+docker image inspect mznopal/entrypoint # untuk lihat entrypoint yang ada
