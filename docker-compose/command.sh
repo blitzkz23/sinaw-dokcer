@@ -15,3 +15,6 @@ docker compose down
 
 # Menampilkan semua projek yang sedang berjalan
 docker compose ls
+
+# Menghapus volume dari dockre compose (kalo pake down, volume tidak dihapus)
+docker volume rm namavolume / docker volume prune
