@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mongodb1:
+    image: mongo:latest
+    container_name: mongodb1
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: naufal
+      MONGO_INITDB_ROOT_PASSWORD: naufal
+      MONGO_INITDB_DATABASE: admin
+    networks:
+      - contoh-jaringan
+
+networks:
+  contoh-jaringan:
+    driver: bridge
+    name: contoh-jaringan
