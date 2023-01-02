@@ -1,0 +1,21 @@
+firstNme: Naufal
+middleName: Aldy
+lastName: Pradana
+# Array
+hobbies:
+  - Reading
+  - Coding
+  - Playing Games
+# Nested
+address:
+  street: Jln. Jalan
+  city: Somewhere
+  country: Indonesia
+# Array with objectw
+wallet:
+  - type: cash
+    amount: 1000000000
+  - type: debit
+    amount: 9999999999
+
+# additional info: JSON to YAML exist.
