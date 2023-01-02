@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  mongodb1:
+    image: mongo:latest
+    container_name: mongodb1
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: naufal
+      MONGO_INITDB_ROOT_PASSWORD: naufal
+      MONGO_INITDB_DATABASE: admin
+    # Short syntax
+    volumes:
+      - "./mongo-data1:/data/db"
+    
+  mongodb2:
+    image: mongo:latest
+    container_name: mongodb2
+    ports:
+      - 27018:27018
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: naufal
+      MONGO_INITDB_ROOT_PASSWORD: naufal
+      MONGO_INITDB_DATABASE: admin
+    # Short syntax
+    volumes:
+      - type: bind
+        source: "./mongo-data2"
+        target: "/data/db"
+        read_only: false
