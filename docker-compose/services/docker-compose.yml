@@ -1,0 +1,10 @@
+version: '3.8'
+
+# Intinya service basically container sih, jadi kita bisa buat banyak container di dalam service
+services:
+  nginx-example:
+    image: nginx:latest
+    container_name: nginx-example
+  mondodb-example:
+    image: mongo:latest
+    container_name: mondodb-example
