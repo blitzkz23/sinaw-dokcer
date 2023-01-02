@@ -18,3 +18,6 @@ docker compose ls
 
 # Menghapus volume dari dockre compose (kalo pake down, volume tidak dihapus)
 docker volume rm namavolume / docker volume prune
+
+# Monitor docker event
+docker events --filter 'container=nama'
