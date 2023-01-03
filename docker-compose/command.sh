@@ -24,3 +24,6 @@ docker events --filter 'container=nama'
 
 # Cek status container
 docker container stats
+
+# Membuild image pada docker compose
+docker compose build
