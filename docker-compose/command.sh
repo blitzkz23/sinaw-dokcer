@@ -21,3 +21,6 @@ docker volume rm namavolume / docker volume prune
 
 # Monitor docker event
 docker events --filter 'container=nama'
+
+# Cek status container
+docker container stats

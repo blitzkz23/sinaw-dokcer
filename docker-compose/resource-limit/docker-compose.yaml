@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  nginx-example:
+    container_name: nginx-example
+    image: nginx:latest
+    ports:
+      - protocol: tcp
+        published: 80
+        target: 80
+    deploy:
+      resources: 
+        reservations:
+          cpus: '0.25'
+          memory: 50M
+        limits:
+          cpus: '0.5'
+          memory: 100M
