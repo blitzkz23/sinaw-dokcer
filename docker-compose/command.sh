@@ -27,3 +27,7 @@ docker container stats
 
 # Membuild image pada docker compose
 docker compose build
+
+# Menjalankan mode prod pada extend service (konfig umum lalu konfig prod)
+docker compose -f docker-compose.yaml -f prod.yaml create
+docker compose -f docker-compose.yaml -f prod.yaml start
